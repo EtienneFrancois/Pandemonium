@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
