@@ -4,9 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { HomeScreenComponent } from './home-screen/home-screen.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeScreenComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,
