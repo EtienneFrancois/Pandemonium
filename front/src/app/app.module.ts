@@ -7,14 +7,12 @@ import { AppComponent } from './app.component';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeScreenComponent,
     TopBarComponent,
-    HomePageComponent
   ],
   imports: [
     BrowserModule,

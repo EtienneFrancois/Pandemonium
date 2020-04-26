@@ -1,20 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 app-root {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  min-width: 100%;
   }
 
-  app-home-page {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  body{
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    min-width: 100%;
   }
+
+  html{
+    height: 90%;
+    min-height: 90%;
+    width: 100%;
+    min-width: 100%;
+  }
+
