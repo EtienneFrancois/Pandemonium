@@ -11,14 +11,14 @@
     <div class="home-screen-side" fxLayout="column" fxLayoutAlign="center">
         <div fxLayoutAlign="center" id="title-table-home-screen" >caractéristiques</div>
         <table>
-            <tr> <td>Vitalité</td> <td>{{heroService.health}}</td></tr>
-            <tr> <td>Sagesse</td> <td>{{heroService.wisdom}}</td></tr>
-            <tr> <td>Force</td> <td>{{heroService.strength}}</td></tr>
-            <tr> <td>Dexterité</td> <td>{{heroService.dexterity}}</td></tr>
-            <tr> <td>Chance</td> <td>{{heroService.luck}}</td></tr>
+            <tr> <td>Vitalité</td> <td>{{getHealth()}}</td></tr>
+            <tr> <td>Sagesse</td> <td>{{getWisdom()}}</td></tr>
+            <tr> <td>Force</td> <td>{{getStrength()}}</td></tr>
+            <tr> <td>Dexterité</td> <td>{{getDexterity()}}</td></tr>
+            <tr> <td>Chance</td> <td>{{getLuck()}}</td></tr>
         </table>
         <div fxLayoutAlign="center"><button type="button" (click)='changeStats()' class="btn btn-secondary btn-lg">Changer son destin</button></div>
         <br><br>
     </div>
 </div>
-<div fxLayoutAlign="center"><button type="button" routerLink="/starting" class="btn btn-secondary btn-lg">Sceller son destin!</button></div>
+<div fxLayoutAlign="center"><button type="button" routerLink="/character" class="btn btn-secondary btn-lg">Sceller son destin!</button></div>

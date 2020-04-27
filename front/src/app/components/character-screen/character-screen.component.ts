@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from 'src/app/services/hero/hero.service';
 
-
 @Component({
-  selector: 'app-stats-screen',
-  templateUrl: './stats-screen.component.html',
-  styleUrls: ['./stats-screen.component.css']
+  selector: 'app-character-screen',
+  templateUrl: './character-screen.component.html',
+  styleUrls: ['./character-screen.component.css']
 })
-export class StatsScreenComponent implements OnInit {
+export class CharacterScreenComponent implements OnInit {
 
   constructor(private heroService: HeroService) { }
 
@@ -36,7 +35,6 @@ export class StatsScreenComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
 
 }
