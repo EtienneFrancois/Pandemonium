@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StartingScreenComponent } from './starting-screen.component';
+import { StatsScreenComponent } from './stats-screen.component';
 
-describe('StartingScreenComponent', () => {
-  let component: StartingScreenComponent;
-  let fixture: ComponentFixture<StartingScreenComponent>;
+describe('StatsScreenComponent', () => {
+  let component: StatsScreenComponent;
+  let fixture: ComponentFixture<StatsScreenComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StartingScreenComponent ]
+      declarations: [ StatsScreenComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StartingScreenComponent);
+    fixture = TestBed.createComponent(StatsScreenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
