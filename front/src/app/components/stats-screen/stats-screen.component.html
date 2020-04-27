@@ -11,13 +11,13 @@
     <div class="home-screen-side" fxLayout="column" fxLayoutAlign="center">
         <div fxLayoutAlign="center" id="title-table-home-screen" >caractéristiques</div>
         <table>
-            <tr> <td fxLayoutAlign="center">Vitalité</td> <td>Value</td></tr>
-            <tr> <td fxLayoutAlign="center">Intelligence</td> <td>Value</td></tr>
-            <tr> <td fxLayoutAlign="center">Force</td> <td>Value</td></tr>
-            <tr> <td fxLayoutAlign="center">Agilité</td> <td>Value</td></tr>
-            <tr> <td fxLayoutAlign="center">Chance</td> <td>Value</td></tr>
+            <tr> <td>Vitalité</td> <td>{{heroService.health}}</td></tr>
+            <tr> <td>Sagesse</td> <td>{{heroService.wisdom}}</td></tr>
+            <tr> <td>Force</td> <td>{{heroService.strength}}</td></tr>
+            <tr> <td>Dexterité</td> <td>{{heroService.dexterity}}</td></tr>
+            <tr> <td>Chance</td> <td>{{heroService.luck}}</td></tr>
         </table>
-        <div fxLayoutAlign="center"><button type="button" class="btn btn-secondary btn-lg">Changer son destin</button></div>
+        <div fxLayoutAlign="center"><button type="button" (click)='changeStats()' class="btn btn-secondary btn-lg">Changer son destin</button></div>
         <br><br>
     </div>
 </div>

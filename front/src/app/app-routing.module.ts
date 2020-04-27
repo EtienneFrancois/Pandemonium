@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeScreenComponent } from './home-screen/home-screen.component';
-import { StatsScreenComponent } from './stats-screen/stats-screen.component';
+import { HomeScreenComponent } from './components/home-screen/home-screen.component';
+import { StatsScreenComponent } from './components/stats-screen/stats-screen.component';
 
 const routes: Routes = [
   { path: '',  redirectTo: '/home', pathMatch: 'full'},

@@ -12,3 +12,7 @@
 #title-table-home-screen{
     font-size: 3vw;
 }
+td{
+    width: 50%;
+    text-align: center;
+}

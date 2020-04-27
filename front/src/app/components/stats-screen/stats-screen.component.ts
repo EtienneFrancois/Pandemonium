@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HeroService } from 'src/app/services/hero/hero.service';
+
 
 @Component({
   selector: 'app-stats-screen',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatsScreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(public heroService: HeroService) { }
+
+  changeStats(): void {
+    this.heroService.changeStats();
+  }
 
   ngOnInit(): void {
+
   }
 
 }
