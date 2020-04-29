@@ -9,6 +9,7 @@ export class HeroService {
   strength: number = 0;
   dexterity: number = 0;
   luck: number = 0;
+  statsGenerated: boolean = false;
   imageUrl: string= "";
   name:string ="";
 

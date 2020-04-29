@@ -33,10 +33,13 @@ export class StatsScreenComponent implements OnInit {
 
   changeStats(): void {
     this.heroService.changeStats();
+    this.heroService.statsGenerated = true;
   }
 
   ngOnInit(): void {
-
+    if(!this.heroService.statsGenerated){
+      this.changeStats();
+    }
   }
 
 }
