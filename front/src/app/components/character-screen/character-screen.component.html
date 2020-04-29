@@ -1,8 +1,23 @@
-<p>character-screen works!</p>
-<table>
-    <tr> <td>Vitalité</td> <td>{{getHealth()}}</td></tr>
-    <tr> <td>Sagesse</td> <td>{{getWisdom()}}</td></tr>
-    <tr> <td>Force</td> <td>{{getStrength()}}</td></tr>
-    <tr> <td>Dexterité</td> <td>{{getDexterity()}}</td></tr>
-    <tr> <td>Chance</td> <td>{{getLuck()}}</td></tr>
-</table>
+<div fxLayout="row" fxLayoutAlign="space-evenly center">
+    <div class="character-screen-side" fxLayoutAlign="center">
+        Votre apparence à peu d'importance en ces lieux ... <br>
+        Elle ne constituera ni avantage ni un inconveniant, elle ne sert à rien. <br>
+        Cependant tout Héro se doit d'avoir un visage et un nom.<br>
+        D'ailleurs, quel est votre nom?
+
+    </div>
+    <div class="character-screen-side" fxLayout="column" fxLayoutAlign="center">
+            <div *ngIf="characterSelected">
+                <img  class="avatar-image" src={{getUrl()}}>
+            </div>
+            <div>Details :: a jouter</div>
+    </div>
+    <div class="character-screen-side" fxLayout="column" fxLayoutAlign="center">
+        <ul class="characters">
+            <li *ngFor="let character of characters" (click)="onSelect(character)">
+                <span>{{character.name}}</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div fxLayoutAlign="center"><button type="button" routerLink="/character" class="btn btn-secondary btn-lg">Sceller son destin!</button></div>

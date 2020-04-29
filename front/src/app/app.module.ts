@@ -17,6 +17,7 @@ import { CharacterScreenComponent } from './components/character-screen/characte
     TopBarComponent,
     StatsScreenComponent,
     CharacterScreenComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+:host{
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    min-width: 100%;
+}
+
+.avatar-image{
+    width: 15vw;
+    height: 15vw;
+}
+
+.character-screen-side{
+    width: 30%;
+    height: 25vw;
+}

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Character } from 'src/app/interfaces/character';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,9 @@ export class HeroService {
   dexterity: number = 0;
   luck: number = 0;
   statsGenerated: boolean = false;
-  imageUrl: string= "";
-  name:string ="";
+  character: Character;
+  name: string;
+  
 
 
   changeStats(){
