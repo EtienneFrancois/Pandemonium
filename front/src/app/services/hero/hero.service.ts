@@ -11,8 +11,8 @@ export class HeroService {
   dexterity: number = 0;
   luck: number = 0;
   statsGenerated: boolean = false;
-  character: Character;
-  name: string;
+  character: Character = null;
+  name: string ="";
   
 
 
@@ -50,6 +50,8 @@ export class HeroService {
       total -= quantity;
     }
   }
+
+
 
   constructor() { }
 }
