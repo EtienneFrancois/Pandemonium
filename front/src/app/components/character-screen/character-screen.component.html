@@ -7,8 +7,6 @@
         <br>
         <input (keyup)="onKey($event)" value={{getName()}} >
         <br>
-        tu es donc : {{getName()}}
-
     </div>
     <div class="character-screen-side" fxLayout="column" fxLayoutAlign="center">
             <div *ngIf="!characterIsNull()" fxLayoutAlign="center" fxLayout="column" >

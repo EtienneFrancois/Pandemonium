@@ -9,6 +9,7 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { StatsScreenComponent } from './components/stats-screen/stats-screen.component';
 import { CharacterScreenComponent } from './components/character-screen/character-screen.component';
+import { SummaryScreenComponent } from './components/summary-screen/summary-screen.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CharacterScreenComponent } from './components/character-screen/characte
     TopBarComponent,
     StatsScreenComponent,
     CharacterScreenComponent,
+    SummaryScreenComponent,
 
   ],
   imports: [
