@@ -11,26 +11,6 @@ export class StatsScreenComponent implements OnInit {
 
   constructor(private heroService: HeroService) { }
 
-  getHealth(): number{
-    return this.heroService.health;
-  }
-
-  getWisdom(): number{
-    return this.heroService.wisdom;
-  }
-  
-  getStrength(): number{
-    return this.heroService.strength;
-  }
-
-  getDexterity(): number{
-    return this.heroService.dexterity;
-  }
-
-  getLuck(): number{
-    return this.heroService.luck;
-  }
-
   changeStats(): void {
     this.heroService.changeStats();
     this.heroService.statsGenerated = true;

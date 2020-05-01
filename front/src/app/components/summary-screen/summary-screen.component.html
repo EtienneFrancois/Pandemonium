@@ -1,1 +1,19 @@
-<p>summary-screen works!</p>
+<div fxLayout="row" fxLayoutAlign="space-evenly center">
+    <div>
+        <h1>Vous etes donc:</h1>
+        <app-caracter-display></app-caracter-display>
+        <span>Êtes-vous certains?</span>
+        <br><br>
+        <div fxLayoutAlign="center"><button type="button" routerLink="/character" class="btn btn-secondary btn-lg">Changer de personnage</button></div>
+    </div>
+    <div>
+        <h1>Et vos caracteristique sont :</h1>
+        <app-stats-display></app-stats-display>
+        <span>Êtes-vous certains?</span>
+        <br><br>
+        <div fxLayoutAlign="center"><button type="button" routerLink="/stats" class="btn btn-secondary btn-lg">changer ses caracteristiques</button></div>
+    </div>
+</div>
+<br>
+<div *ngIf="!haveUnfilledField(); else elseBlock" fxLayoutAlign="center center"><button type="button" routerLink="/battle" class="btn btn-secondary btn-lg">Entrer dans le Pandemonium!</button></div>
+<ng-template #elseBlock > <div fxLayoutAlign="center center">Vous n'avez pas choisi votre apparence ou vos caracteristiques.</div></ng-template>

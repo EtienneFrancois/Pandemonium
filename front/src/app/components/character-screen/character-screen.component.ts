@@ -28,26 +28,26 @@ export class CharacterScreenComponent implements OnInit {
     return this.heroService.name;
   }
 
+  onKey(event: any) { 
+    this.heroService.name = event.target.value;
+  }
+
   characterIsNull(): boolean{
-    return this.heroService.character == null;
+    return this.heroService.characterIsNull();
   }
 
   nameIsEmpty():boolean{
-    return this.heroService.name == "";
+    return this.heroService.nameIsEmpty();
+  }
+
+  haveUnfilledField(): boolean{
+    return this.heroService.haveUnfilledField();
   }
 
   ngOnInit(): void {
     if(this.heroService.character){
       this.characterSelected = true;
     }
-  }
-
-  onKey(event: any) { 
-    this.heroService.name = event.target.value;
-  }
-
-  haveUnfilledField(): boolean{
-    return this.characterIsNull() || this.nameIsEmpty();
   }
 
 }

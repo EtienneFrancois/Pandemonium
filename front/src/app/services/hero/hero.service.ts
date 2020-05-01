@@ -14,9 +14,19 @@ export class HeroService {
   character: Character = null;
   name: string ="";
   
+  characterIsNull(): boolean{
+    return this.character == null;
+  }
 
+  nameIsEmpty():boolean{
+    return this.name == "";
+  }
 
-  changeStats(){
+  haveUnfilledField(): boolean{
+    return this.characterIsNull() || this.nameIsEmpty();
+  }
+
+  changeStats(){ // MOOC : API CALL LATER
     let total= 100;
     let index;
     let quantity;
@@ -50,6 +60,8 @@ export class HeroService {
       total -= quantity;
     }
   }
+
+
 
 
 

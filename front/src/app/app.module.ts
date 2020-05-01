@@ -10,6 +10,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { StatsScreenComponent } from './components/stats-screen/stats-screen.component';
 import { CharacterScreenComponent } from './components/character-screen/character-screen.component';
 import { SummaryScreenComponent } from './components/summary-screen/summary-screen.component';
+import { StatsDisplayComponent } from './components/stats-display/stats-display.component';
+import { CaracterDisplayComponent } from './components/caracter-display/caracter-display.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { SummaryScreenComponent } from './components/summary-screen/summary-scre
     StatsScreenComponent,
     CharacterScreenComponent,
     SummaryScreenComponent,
+    StatsDisplayComponent,
+    CaracterDisplayComponent,
 
   ],
   imports: [

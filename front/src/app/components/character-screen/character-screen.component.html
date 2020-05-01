@@ -9,10 +9,7 @@
         <br>
     </div>
     <div class="character-screen-side" fxLayout="column" fxLayoutAlign="center">
-            <div *ngIf="!characterIsNull()" fxLayoutAlign="center" fxLayout="column" >
-                <div fxLayoutAlign="center"><img  class="avatar-image" src={{getUrl()}}></div>
-                <div fxLayoutAlign="center">*description</div>
-            </div>
+        <app-caracter-display></app-caracter-display>
     </div>
     <div class="character-screen-side" fxLayout="column" fxLayoutAlign="center">
         <ul class="list-group">
@@ -22,4 +19,4 @@
         </ul>
     </div>
 </div>
-<div *ngIf="!haveUnfilledField()" fxLayoutAlign="center"><button type="button" routerLink="/character" class="btn btn-secondary btn-lg">Sceller son destin!</button></div>
+<div *ngIf="!haveUnfilledField()" fxLayoutAlign="center"><button type="button" routerLink="/summary" class="btn btn-secondary btn-lg">Incarner cette enveloppe charnelle!</button></div>
