@@ -1,0 +1,30 @@
+<table class="table table-bordered">
+    <tr>
+        <td>
+            <div *ngIf="!isEmpty(0); else elseBlock" (click)="use(0)">
+                {{getName(0)}}
+            </div>
+            <ng-template #elseBlock ><div>Empty</div></ng-template>
+        </td> 
+        <td>
+            <div *ngIf="!isEmpty(1); else elseBlock" (click)="use(1)">
+                {{getName(1)}}
+            </div>
+            <ng-template #elseBlock ><div>Empty</div></ng-template>
+        </td>            
+    </tr>
+    <tr>
+        <td>
+            <div *ngIf="!isEmpty(2); else elseBlock" (click)="use(2)">
+                name:{{getName(2)}}
+            </div>
+            <ng-template #elseBlock ><div>Empty</div></ng-template>
+        </td> 
+        <td>
+            <div *ngIf="!isEmpty(3); else elseBlock" (click)="use(3)">
+                name:{{getName(3)}}
+            </div>
+            <ng-template #elseBlock ><div>Empty</div></ng-template>
+        </td>            
+    </tr>
+</table>

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { HeroService } from 'src/app/services/hero/hero.service';
 
 @Component({
-  selector: 'app-caracter-display',
-  templateUrl: './caracter-display.component.html',
-  styleUrls: ['./caracter-display.component.css']
+  selector: 'app-character-display',
+  templateUrl: './character-display.component.html',
+  styleUrls: ['./character-display.component.css']
 })
-export class CaracterDisplayComponent implements OnInit {
+export class CharacterDisplayComponent implements OnInit {
 
   constructor(private heroService:HeroService) { }
 

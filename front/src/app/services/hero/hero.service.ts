@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Character } from 'src/app/interfaces/character';
+import { Spell } from 'src/app/interfaces/spell';
 
 @Injectable({
   providedIn: 'root'
