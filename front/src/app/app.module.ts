@@ -15,6 +15,7 @@ import { CharacterDisplayComponent } from './components/character-display/charac
 import { BattleScreenComponent } from './components/battle-screen/battle-screen.component';
 import { SpellsHandlerComponent } from './components/spells-handler/spells-handler.component';
 import { CharacterBattleDisplayComponent } from './components/character-battle-display/character-battle-display.component';
+import { AdversaryBattleDisplayComponent } from './components/adversary-battle-display/adversary-battle-display.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CharacterBattleDisplayComponent } from './components/character-battle-d
     BattleScreenComponent,
     SpellsHandlerComponent,
     CharacterBattleDisplayComponent,
+    AdversaryBattleDisplayComponent,
 
   ],
   imports: [
