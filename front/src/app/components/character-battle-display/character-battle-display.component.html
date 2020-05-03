@@ -1,0 +1,9 @@
+<div fxLayout="row" style="width: 100%">
+    <app-character-display fxLayoutAlign="start"></app-character-display>
+    <div fxLayoutAlign="end start" fxLayout="column" style="width: 55%;">
+        HP:{{getHp()}}/{{getMaxHp()}}
+        <div class="progress" style="width: 100%;">
+            <div class="progress-bar bg-success" role="progressbar"  [style.width]="getRatio()+'%'" attr.aria-valuenow={{getHp()}} attr.aria-valuemin="0" attr.aria-valuemax={{getMaxHp()}}></div>
+        </div>
+    </div>
+</div>

@@ -14,6 +14,7 @@ import { StatsDisplayComponent } from './components/stats-display/stats-display.
 import { CharacterDisplayComponent } from './components/character-display/character-display.component';
 import { BattleScreenComponent } from './components/battle-screen/battle-screen.component';
 import { SpellsHandlerComponent } from './components/spells-handler/spells-handler.component';
+import { CharacterBattleDisplayComponent } from './components/character-battle-display/character-battle-display.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SpellsHandlerComponent } from './components/spells-handler/spells-handl
     CharacterDisplayComponent,
     BattleScreenComponent,
     SpellsHandlerComponent,
+    CharacterBattleDisplayComponent,
 
   ],
   imports: [

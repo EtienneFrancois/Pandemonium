@@ -14,6 +14,8 @@ export class HeroService {
   statsGenerated: boolean = false;
   character: Character = null;
   name: string ="";
+  level: number =1;
+  healthPoint: number =300;
   
   characterIsNull(): boolean{
     return this.character == null;
@@ -60,11 +62,12 @@ export class HeroService {
       }
       total -= quantity;
     }
+    this.healthPoint=this.getMaxHp();
   }
 
-
-
-
+  getMaxHp():number{
+    return 300+(this.health*10);
+  }
 
   constructor() { }
 }

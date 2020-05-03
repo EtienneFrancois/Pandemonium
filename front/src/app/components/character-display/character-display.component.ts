@@ -18,6 +18,10 @@ export class CharacterDisplayComponent implements OnInit {
     return this.heroService.name;
   }
 
+  getLevel(): number{
+    return this.heroService.level;
+  }
+
   characterIsNull(): boolean{
     return this.heroService.characterIsNull();
   }
