@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from 'src/app/services/hero/hero.service';
+import { Stats } from 'src/app/classes/stats';
 
 @Component({
   selector: 'app-stats-display',
@@ -10,24 +11,26 @@ export class StatsDisplayComponent implements OnInit {
 
   constructor(private heroService: HeroService) { }
 
+  stats:Stats = this.heroService.getStats();
+
   getHealth(): number{
-    return this.heroService.health;
+    return this.stats.health;
   }
 
   getWisdom(): number{
-    return this.heroService.wisdom;
+    return this.stats.wisdom;
   }
   
   getStrength(): number{
-    return this.heroService.strength;
+    return this.stats.strength;
   }
 
   getDexterity(): number{
-    return this.heroService.dexterity;
+    return this.stats.dexterity;
   }
 
   getLuck(): number{
-    return this.heroService.luck;
+    return this.stats.luck;
   }
 
   ngOnInit(): void {
