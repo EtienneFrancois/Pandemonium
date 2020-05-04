@@ -13,6 +13,7 @@ export class HeroService {
   name: string ="";
   level: number =1;
   healthPoint: number =300;
+  alive:boolean = true;
   
   characterIsNull(): boolean{
     return this.character == null;
@@ -39,6 +40,16 @@ export class HeroService {
   getStats(): Stats{
     return this.stats;
   }
+
+  isAlive():boolean{
+    return this.alive;
+  }
+
+  takeDamage(value:number){
+    this.healthPoint-=value;
+    if(this.healthPoint<1){ this.alive=false}
+  }
+
 
   constructor() { }
 }

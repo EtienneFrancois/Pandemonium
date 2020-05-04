@@ -27,7 +27,6 @@ export class AdversaryBattleDisplayComponent implements OnInit {
   }
 
   getUrl():string{
-    console.log(this.adversary.getUrl());
     return this.adversary.getUrl();
   }
 

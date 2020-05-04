@@ -19,7 +19,6 @@ export class CharacterBattleDisplayComponent implements OnInit {
   }
 
   getRatio():number{
-    console.log("Ratio", Math.round(100/this.getMaxHp()*this.getHp()));
     return Math.round(100/this.getMaxHp()*this.getHp());
   }
 
