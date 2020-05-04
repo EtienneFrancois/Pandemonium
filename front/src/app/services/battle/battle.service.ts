@@ -19,11 +19,11 @@ export class BattleService {
 
   hit(value:number){
     if(this.currentPlayer){
+      this.changePlayer();
       this.adversaryService.takeDamage(value);
       console.log("Hero deal ",value," damages(s) to ennemy");
       setTimeout(() => {
         if(this.adversaryService.isAlive()){
-          this.changePlayer();
           this.adversaryAction();
         }else{
           console.log("Win! Next adversary incoming!");

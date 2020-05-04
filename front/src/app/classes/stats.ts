@@ -9,7 +9,7 @@ export class Stats{
     constructor() {}
 
     changeStats(){ // MOOC : API CALL LATER
-        let total= 100;
+        let total= 10;
         let index;
         let quantity;
         this.health = 1;
@@ -19,7 +19,7 @@ export class Stats{
         this.luck = 1;
         while(total > 0){
           index = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
-          quantity =  Math.floor(Math.random() * (total - 0 + 1)) + 0;
+          quantity =  Math.floor(Math.random() * (1 - 0 + 1)) + 0;
           switch (index) {
             case 0 :
               this.health+=quantity;
