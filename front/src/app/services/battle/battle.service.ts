@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HeroService } from '../hero/hero.service';
 import { AdversaryService } from '../adversary/adversary.service';
-import { Character } from 'src/app/interfaces/character';
+import { ICharacter } from 'src/app/interfaces/icharacter';
 import { Stats } from 'src/app/classes/stats';
 import { ENEMIES } from 'src/app/mock-enemies';
 
@@ -47,7 +47,7 @@ export class BattleService {
     this.currentPlayer=!this.currentPlayer; 
   }
 
-  setAdversary(stats:Stats, character: Character, level: number){
+  setAdversary(stats:Stats, character: ICharacter, level: number){
     this.adversaryService.stats=stats;
     this.adversaryService.character=character;
     this.adversaryService.level=level;

@@ -1,45 +1,71 @@
+import { HttpClient } from '@angular/common/http';
+import { IStats } from '../interfaces/istats';
+
 export class Stats{
-    
-    health: number = 0;
-    wisdom: number = 0;
-    strength: number = 0;
-    dexterity: number = 0;
-    luck: number = 0;
+    stats:IStats = {health: 0, strength : 0, wisdom : 0, dexterity : 0, luck: 0};
+
+    getHealth(){
+      return this.stats.health;
+    }
+
+    setHealth(value:number){
+      this.stats.health=value;
+    }
+
+    getWisdom(){
+      return this.stats.wisdom;
+    }
+
+    setWisdom(value:number){
+      this.stats.wisdom=value;
+    }
+
+
+    getStrength(){
+      return this.stats.strength;
+    }
+
+    setStrength(value:number){
+      this.stats.strength=value;
+    }
+
+
+    getDexterity(){
+      return this.stats.dexterity;
+    }
+
+    setDexterity(value:number){
+      this.stats.dexterity=value;
+    }
+
+
+    getLuck(){
+      return this.stats.luck;
+    }
+
+    setLuck(value:number){
+      this.stats.luck=value;
+    }
+
 
     constructor() {}
 
-    changeStats(){ // MOOC : API CALL LATER
-        let total= 10;
-        let index;
-        let quantity;
-        this.health = 1;
-        this.wisdom = 1;
-        this.strength = 1;
-        this.dexterity = 1;
-        this.luck = 1;
-        while(total > 0){
-          index = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
-          quantity =  Math.floor(Math.random() * (1 - 0 + 1)) + 0;
-          switch (index) {
-            case 0 :
-              this.health+=quantity;
-            break
-            case 1 :
-              this.wisdom+=quantity;
-            break
-            case 2 :
-              this.strength+=quantity;
-            break
-            case 3 :
-              this.dexterity+=quantity;
-            break
-            case 4 :
-              this.luck+=quantity;
-            break
-            default:
-              console.log('Out of index ' + index + '.');
-          }
-          total -= quantity;
+    getSum(){
+      return this.getHealth() + this.getWisdom() + this.getStrength() + this.getDexterity() + this.getLuck();
+    }
+
+    changeStats(){
+      var request = new XMLHttpRequest();
+      request.open('GET', 'https://localhost:5001/Stats/10')
+      request.send();
+      request.onload = () => {
+        if(request.status==200){
+           this.stats=JSON.parse(eval(request.response));
+        }else{
+          console.log("error ${request.status} ${request.statusText}")
         }
       }
+    }
+
+
 }

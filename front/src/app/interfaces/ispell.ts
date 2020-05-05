@@ -1,6 +1,6 @@
 import { HeroService } from '../services/hero/hero.service';
 
-export interface Spell{
+export interface ISpell{
     name: string;
     description: string;
     effect: string;

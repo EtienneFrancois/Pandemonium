@@ -14,23 +14,23 @@ export class StatsDisplayComponent implements OnInit {
   stats:Stats = this.heroService.getStats();
 
   getHealth(): number{
-    return this.stats.health;
+    return this.stats.getHealth();
   }
 
   getWisdom(): number{
-    return this.stats.wisdom;
+    return this.stats.getWisdom();
   }
   
   getStrength(): number{
-    return this.stats.strength;
+    return this.stats.getStrength();
   }
 
   getDexterity(): number{
-    return this.stats.dexterity;
+    return this.stats.getDexterity();
   }
 
   getLuck(): number{
-    return this.stats.luck;
+    return this.stats.getLuck();
   }
 
   ngOnInit(): void {

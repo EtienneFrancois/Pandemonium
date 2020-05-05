@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from 'src/app/services/hero/hero.service';
 import {CHARACTERS} from '../../mock-characters';
-import { Character } from 'src/app/interfaces/character';
+import { ICharacter } from 'src/app/interfaces/icharacter';
 
 @Component({
   selector: 'app-character-screen',
@@ -15,7 +15,7 @@ export class CharacterScreenComponent implements OnInit {
   constructor(private heroService: HeroService) { }
 
   
-  onSelect(character: Character){
+  onSelect(character: ICharacter){
     this.heroService.character = character;
     this.characterSelected=true;
   }

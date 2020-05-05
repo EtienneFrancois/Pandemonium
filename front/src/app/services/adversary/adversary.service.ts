@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Stats } from 'src/app/classes/stats';
-import { Character } from 'src/app/interfaces/character';
-import { Spell } from 'src/app/interfaces/spell';
+import { ICharacter } from 'src/app/interfaces/icharacter';
+import { ISpell } from 'src/app/interfaces/ispell';
 
 
 
@@ -10,11 +10,11 @@ import { Spell } from 'src/app/interfaces/spell';
 })
 export class AdversaryService {
   stats:Stats;
-  character: Character;
+  character: ICharacter;
   heathPoint: number ;
   level: number;
   alive: boolean;
-  spells: Spell[] =[{name: "Frapper", description: "Attaque l'ennemie avec le poing" ,effect: "damage", formula: "this.heroService.stats.strength*8"},null,null,null];
+  spells: ISpell[] =[{name: "Frapper", description: "Attaque l'ennemie avec le poing" ,effect: "damage", formula: "this.heroService.stats.getStrength()*8"},null,null,null];
 
   constructor() { }
 
@@ -23,7 +23,7 @@ export class AdversaryService {
   }
 
   getMaxHp():number{
-    return 300+(this.stats.health*10);
+    return 300+(this.stats.getHealth()*10);
   }
 
   getUrl():string{

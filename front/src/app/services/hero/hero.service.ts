@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Character } from 'src/app/interfaces/character';
-import { Spell } from 'src/app/interfaces/spell';
+import { ICharacter } from 'src/app/interfaces/icharacter';
+import { ISpell } from 'src/app/interfaces/ispell';
 import { Stats } from 'src/app/classes/stats'
 
 @Injectable({
@@ -9,7 +9,7 @@ import { Stats } from 'src/app/classes/stats'
 export class HeroService {
   stats: Stats = new Stats;
   statsGenerated: boolean = false;
-  character: Character = null;
+  character: ICharacter = null;
   name: string ="";
   level: number =1;
   healthPoint: number =300;
@@ -34,7 +34,7 @@ export class HeroService {
   }
 
   getMaxHp():number{
-    return 300+(this.stats.health*10);
+    return 300+(this.stats.getHealth()*10);
   }
 
   getStats(): Stats{
