@@ -37,6 +37,10 @@ export class HeroService {
     return 300+(this.stats.getHealth()*10);
   }
 
+  getHp():number{
+    return this.healthPoint;
+  }
+
   getStats(): Stats{
     return this.stats;
   }

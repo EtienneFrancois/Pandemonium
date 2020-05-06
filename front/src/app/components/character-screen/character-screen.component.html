@@ -13,7 +13,7 @@
     </div>
     <div class="character-screen-side" fxLayout="column" fxLayoutAlign="center">
         <ul class="list-group">
-            <li class="list-group-item" *ngFor="let character of characters" (click)="onSelect(character)">
+            <li class="list-group-item" *ngFor="let character of heroes" (click)="onSelect(character)">
                 <span>{{character.name}}</span>
             </li>
         </ul>

@@ -11,7 +11,7 @@ export class AdversaryBattleDisplayComponent implements OnInit {
   constructor(private adversary:AdversaryService) { }
 
   getHp():number{
-    return this.adversary.heathPoint;
+    return this.adversary.getHp();;
   }
 
   getLevel():number{

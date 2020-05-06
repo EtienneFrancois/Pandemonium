@@ -1,18 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from 'src/app/services/hero/hero.service';
-import {CHARACTERS} from '../../mock-characters';
 import { ICharacter } from 'src/app/interfaces/icharacter';
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 @Component({
   selector: 'app-character-screen',
   templateUrl: './character-screen.component.html',
   styleUrls: ['./character-screen.component.css']
 })
-export class CharacterScreenComponent implements OnInit {
-  characters = CHARACTERS;
-  characterSelected: boolean = false;
 
-  constructor(private heroService: HeroService) { }
+export class CharacterScreenComponent implements OnInit { 
+  characterSelected: boolean = false;
+  heroes: ICharacter[];
+  constructor(private heroService: HeroService, private http: HttpClient) {
+    this.getHeroList();
+   }
 
   
   onSelect(character: ICharacter){
@@ -50,4 +54,7 @@ export class CharacterScreenComponent implements OnInit {
     }
   }
 
+  getHeroList():void {
+    this.http.get<ICharacter[]>("https://127.0.0.1:5011/Character").subscribe(heroes => this.heroes=heroes);
+  }
 }

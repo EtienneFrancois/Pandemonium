@@ -16,6 +16,7 @@ import { BattleScreenComponent } from './components/battle-screen/battle-screen.
 import { SpellsHandlerComponent } from './components/spells-handler/spells-handler.component';
 import { CharacterBattleDisplayComponent } from './components/character-battle-display/character-battle-display.component';
 import { AdversaryBattleDisplayComponent } from './components/adversary-battle-display/adversary-battle-display.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AdversaryBattleDisplayComponent } from './components/adversary-battle-d
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

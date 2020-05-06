@@ -12,9 +12,16 @@ export class BattleService {
   currentPlayer:boolean =true;
 
   constructor(private heroService:HeroService, private adversaryService:AdversaryService) { 
-    let stats= new Stats();
-    stats.changeStats();
-    this.setAdversary(stats, ENEMIES[0], 1);
+    this.adversaryNewCombat();
+    this.heroNewCombat();
+  }
+
+  heroNewCombat(){
+    this.heroService.healthPoint=this.heroService.getMaxHp();
+  }
+
+  adversaryNewCombat(){
+    this.adversaryService.init();
   }
 
   hit(value:number){
@@ -27,9 +34,7 @@ export class BattleService {
           this.adversaryAction();
         }else{
           console.log("Win! Next adversary incoming!");
-          let stats= new Stats();
-          stats.changeStats();
-          this.setAdversary(stats, ENEMIES[0], 1);
+          this.adversaryNewCombat();
         }
       }, 1000);
     }
@@ -47,13 +52,6 @@ export class BattleService {
     this.currentPlayer=!this.currentPlayer; 
   }
 
-  setAdversary(stats:Stats, character: ICharacter, level: number){
-    this.adversaryService.stats=stats;
-    this.adversaryService.character=character;
-    this.adversaryService.level=level;
-    this.adversaryService.heathPoint=this.adversaryService.getMaxHp();
-    this.adversaryService.alive=true;
-  }
 
   delay(ms: number) {
     return new Promise( resolve => setTimeout(resolve, ms) );

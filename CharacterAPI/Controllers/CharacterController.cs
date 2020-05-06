@@ -24,5 +24,14 @@ namespace CharacterAPI.Controllers
            return new JsonResult(CHARACTER_SERVICE.CharacterBusiness.getHeroList());
         }
 
+        [HttpGet("{type}")]
+        public JsonResult Get(string type)
+        {   
+            if(type == "monster"){return new JsonResult(CHARACTER_SERVICE.CharacterBusiness.getrandomMonster());}
+            return null;
+        }
+
+
+
     }
 }

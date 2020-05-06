@@ -11,7 +11,7 @@ export class CharacterBattleDisplayComponent implements OnInit {
   constructor(private heroService:HeroService) { }
 
   getHp():number{
-    return this.heroService.healthPoint;
+    return this.heroService.getHp();
   }
 
   getMaxHp():number{

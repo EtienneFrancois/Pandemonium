@@ -8,5 +8,9 @@ namespace CHARACTER_SERVICE {
         public static ICollection<Character> getHeroList(){
             return JsonSerializer.Deserialize<Character[]>(MockCharacter.HEROLIST);
         }
+
+        public static Character getrandomMonster(){
+            return JsonSerializer.Deserialize<Character>(MockCharacter.MONSTERLIST);
+        }
     }
 }
