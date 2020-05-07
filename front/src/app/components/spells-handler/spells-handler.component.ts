@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpellsService } from 'src/app/services/spells/spells.service';
+import { BattleService } from 'src/app/services/battle/battle.service';
 
 @Component({
   selector: 'app-spells-handler',
@@ -8,7 +9,7 @@ import { SpellsService } from 'src/app/services/spells/spells.service';
 })
 export class SpellsHandlerComponent implements OnInit {
 
-  constructor(private spellsService:SpellsService) { }
+  constructor(private spellsService:SpellsService, private battleService:BattleService) { }
 
   getName(spellNumber: number): string{
     return this.spellsService.spells[spellNumber].name;
@@ -19,7 +20,7 @@ export class SpellsHandlerComponent implements OnInit {
   }
 
   use(spellNumber: number): void{
-    this.spellsService.use(this.spellsService.spells[spellNumber]);
+    this.battleService.heroAction(this.spellsService.use(this.spellsService.spells[spellNumber]));
   }
 
   isEmpty(spellNumber: number){

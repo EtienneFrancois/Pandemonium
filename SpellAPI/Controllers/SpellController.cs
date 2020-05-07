@@ -26,6 +26,9 @@ namespace SpellAPI.Controllers
             if(type=="hero"){
                 return new JsonResult(SPELL_SERVICE.SpellBusiness.getHeroSpellByID(id));
             }
+            if(type=="monster"){
+                return new JsonResult(SPELL_SERVICE.SpellBusiness.getMonsterSpellByID(id));
+            }
             return null;
         }
 

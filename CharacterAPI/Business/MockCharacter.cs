@@ -10,6 +10,6 @@ namespace CHARACTER_SERVICE {
            
 
         public static string MONSTERLIST=@"
-            {""id"": 5,""url"": ""https://lagbt.wiwiland.net/images/9/9a/TESL-Murkwater_Goblin01.png"", ""name"": ""Gobelin"", ""baseSpellId"":5}";
+            {""id"": 0,""url"": ""https://lagbt.wiwiland.net/images/9/9a/TESL-Murkwater_Goblin01.png"", ""name"": ""Gobelin"", ""baseSpellId"":0}";
     }
 }

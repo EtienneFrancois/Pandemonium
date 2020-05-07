@@ -8,7 +8,7 @@ namespace SPELL_SERVICE {
            
 
         public static string MONSTERSPELL=@"
-            {""id"": 0,""name"": ""Coup de poing"", ""description"": ""une attaque qui utilise la force."", ""effect"":""damage"", ""formula"":""this.heroService.stats.strength*8""}";
+            [{""id"": 0,""name"": ""Coup de poing"", ""description"": ""une attaque qui utilise la force."", ""effect"":""damage"", ""formula"":""this.heroService.stats.strength*8""}]";
     }
 
 }

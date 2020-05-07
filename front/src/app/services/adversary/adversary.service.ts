@@ -3,6 +3,7 @@ import { ICharacter } from 'src/app/interfaces/icharacter';
 import { ISpell } from 'src/app/interfaces/ispell';
 import { HttpClient } from '@angular/common/http';
 import { IStats } from 'src/app/interfaces/istats';
+import { SpellsService } from '../spells/spells.service';
 
 
 
@@ -15,9 +16,8 @@ export class AdversaryService {
   healthPoint: number = 300;
   level: number;
   alive: boolean = true;
-  spells: ISpell[] =[{id:0,name: "Frapper", description: "Attaque l'ennemie avec le poing" ,effect: "damage", formula: "this.heroService.stats.strength*8"},null,null,null];
 
-  constructor(private http: HttpClient, ) { 
+  constructor(private http: HttpClient ) { 
     this.init();
   }
 

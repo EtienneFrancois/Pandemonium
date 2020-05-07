@@ -14,5 +14,15 @@ namespace SPELL_SERVICE {
             return null;
         }
 
+        public static Spell getMonsterSpellByID(int id){
+            Spell[] list = JsonSerializer.Deserialize<Spell[]>(MockCharacter.MONSTERSPELL);
+            foreach(Spell element in list){
+                if(element.id==id){
+                    return element;
+                }
+            }
+            return null;
+        }
+
     }
 }
