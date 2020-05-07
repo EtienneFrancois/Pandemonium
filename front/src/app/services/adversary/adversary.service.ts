@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Stats } from 'src/app/classes/stats';
 import { ICharacter } from 'src/app/interfaces/icharacter';
 import { ISpell } from 'src/app/interfaces/ispell';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { IStats } from 'src/app/interfaces/istats';
 
 
 
@@ -12,27 +10,23 @@ import { catchError, retry } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AdversaryService {
-  stats:Stats = new Stats();
+  stats:IStats;
   character: ICharacter;
-  heathPoint: number ;
+  healthPoint: number = 300;
   level: number;
   alive: boolean = true;
-  spells: ISpell[] =[{name: "Frapper", description: "Attaque l'ennemie avec le poing" ,effect: "damage", formula: "this.heroService.stats.getStrength()*8"},null,null,null];
+  spells: ISpell[] =[{name: "Frapper", description: "Attaque l'ennemie avec le poing" ,effect: "damage", formula: "this.heroService.stats.strength*8"},null,null,null];
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient, ) { 
     this.init();
   }
 
-  getStats(): Stats{
-    return this.stats;
-  }
-
   getMaxHp():number{
-    return 300+(this.stats.getHealth()*10);
+    return 300+(this.stats.health*10);
   }
 
   getHp(){
-    return this.heathPoint;
+    return this.healthPoint;
   }
 
   getUrl():string{
@@ -44,8 +38,8 @@ export class AdversaryService {
   }
 
   takeDamage(value:number){
-    this.heathPoint-=value;
-    if(this.heathPoint<1){ this.alive=false;}
+    this.healthPoint-=value;
+    if(this.healthPoint<1){ this.alive=false;}
   }
 
   isAlive(){
@@ -53,9 +47,8 @@ export class AdversaryService {
   }
 
   init(){
-    this.stats.changeStats();
-    this.http.get<ICharacter>("https://127.0.0.1:5011/Character/monster").subscribe( (result) => {this.character=result;}, (error) => {console.log(error);} );
-    this.heathPoint=this.getMaxHp();
+    this.http.get<IStats>("https://localhost:5001/Stats/10").subscribe( (result) => {this.stats=result;}, (error) => {console.log(error);}, () => this.healthPoint=this.getMaxHp());
+    this.http.get<ICharacter>("https://127.0.0.1:5011/Character/monster").subscribe( (result) => {this.character=result;}, (error) => {console.log(error);});
   }
 
 }

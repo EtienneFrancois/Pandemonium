@@ -11,7 +11,7 @@ export class AdversaryBattleDisplayComponent implements OnInit {
   constructor(private adversary:AdversaryService) { }
 
   getHp():number{
-    return this.adversary.getHp();;
+    return this.adversary.getHp();
   }
 
   getLevel():number{
@@ -19,7 +19,7 @@ export class AdversaryBattleDisplayComponent implements OnInit {
   }
 
   getMaxHp():number{
-    return this.adversary.getMaxHp();
+    return this.adversary.stats?this.adversary.getMaxHp(): this.adversary.getHp();
   }
 
   getName():string{

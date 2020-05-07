@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { ICharacter } from 'src/app/interfaces/icharacter';
 import { IStats } from 'src/app/interfaces/istats';
-import { StatsService } from '../stats/stats.service'
-import { Observable } from 'rxjs/internal/Observable';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroService {
   stats: IStats;
-  statsObserver:Observable<IStats>;
   statsGenerated: boolean = false;
   character: ICharacter;
   name: string ="";
@@ -17,7 +15,7 @@ export class HeroService {
   healthPoint: number;
   alive:boolean = true;
 
-  constructor(private statsService:StatsService) { }
+  constructor(private http:HttpClient) { }
   
   characterIsNull(): boolean{
     return this.character == null;
@@ -31,13 +29,8 @@ export class HeroService {
     return this.characterIsNull() || this.nameIsEmpty();
   }
 
-  changeStats(){ // MOOC : API CALL LATER
-    this.stats=this.statsService.generateNewHeroStats();
-    this.statsGenerated=true;
-  }
-
-  getStatsOberser():Observable<IStats>{
-    return this.statsObserver;
+  changeStats():void{
+    this.http.get<IStats>("https://localhost:5001/Stats/10").subscribe(value=>{this.stats=value, (error) => {console.log(error);}, () => this.healthPoint=this.getMaxHp();  this.statsGenerated=true;});
   }
 
   getMaxHp():number{

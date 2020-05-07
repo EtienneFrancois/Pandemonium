@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HeroService } from '../hero/hero.service';
 import { AdversaryService } from '../adversary/adversary.service';
-import { ICharacter } from 'src/app/interfaces/icharacter';
-import { Stats } from 'src/app/classes/stats';
-import { ENEMIES } from 'src/app/mock-enemies';
 
 @Injectable({
   providedIn: 'root'
