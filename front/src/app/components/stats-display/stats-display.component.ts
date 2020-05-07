@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from 'src/app/services/hero/hero.service';
 import { Stats } from 'src/app/classes/stats';
+import { IStats } from 'src/app/interfaces/istats';
+import { Observable } from 'rxjs/internal/Observable';
+
 
 @Component({
   selector: 'app-stats-display',
@@ -9,31 +12,30 @@ import { Stats } from 'src/app/classes/stats';
 })
 export class StatsDisplayComponent implements OnInit {
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService) {   }
 
-  stats:Stats = this.heroService.getStats();
-
-  getHealth(): number{
-    return this.stats.getHealth();
+  getHealth(){
+    return this.heroService.stats ? this.heroService.stats.health : 0;
   }
 
-  getWisdom(): number{
-    return this.stats.getWisdom();
-  }
-  
-  getStrength(): number{
-    return this.stats.getStrength();
+  getStrength(){
+    return this.heroService.stats ? this.heroService.stats.strength : 0;
   }
 
-  getDexterity(): number{
-    return this.stats.getDexterity();
+  getWisdom(){
+    return this.heroService.stats ? this.heroService.stats.wisdom : 0;
   }
 
-  getLuck(): number{
-    return this.stats.getLuck();
+  getDexterity(){
+    return this.heroService.stats ? this.heroService.stats.dexterity : 0;
+  }
+
+  getLuck(){
+    return this.heroService.stats ? this.heroService.stats.luck : 0;
   }
 
   ngOnInit(): void {
+    //this.stats=this.heroService.getStatsOberser();
   }
 
 }

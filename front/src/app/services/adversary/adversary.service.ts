@@ -54,7 +54,7 @@ export class AdversaryService {
 
   init(){
     this.stats.changeStats();
-    this.http.get<ICharacter>("https://127.0.0.1:5011/Character/monster").subscribe(character => this.character=character);
+    this.http.get<ICharacter>("https://127.0.0.1:5011/Character/monster").subscribe( (result) => {this.character=result;}, (error) => {console.log(error);} );
     this.heathPoint=this.getMaxHp();
   }
 
