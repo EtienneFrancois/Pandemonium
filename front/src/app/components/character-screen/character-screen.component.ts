@@ -4,6 +4,8 @@ import { ICharacter } from 'src/app/interfaces/icharacter';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+import { SpellsService } from 'src/app/services/spells/spells.service';
+import { ISpell } from 'src/app/interfaces/ispell';
 
 @Component({
   selector: 'app-character-screen',
@@ -14,7 +16,7 @@ import { catchError, retry } from 'rxjs/operators';
 export class CharacterScreenComponent implements OnInit { 
   characterSelected: boolean = false;
   heroes: ICharacter[];
-  constructor(private heroService: HeroService, private http: HttpClient) {
+  constructor(private heroService: HeroService, private http: HttpClient, private spellsService:SpellsService) {
     this.getHeroList();
    }
 
@@ -22,6 +24,7 @@ export class CharacterScreenComponent implements OnInit {
   onSelect(character: ICharacter){
     this.heroService.character = character;
     this.characterSelected=true;
+    this.http.get<ISpell>("https://127.0.0.1:5021/Spell/hero/"+this.heroService.character.baseSpellId).subscribe(spell => this.spellsService.spells[0]=spell);
   }
 
   getUrl(): string{

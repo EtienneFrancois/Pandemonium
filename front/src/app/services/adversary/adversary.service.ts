@@ -15,7 +15,7 @@ export class AdversaryService {
   healthPoint: number = 300;
   level: number;
   alive: boolean = true;
-  spells: ISpell[] =[{name: "Frapper", description: "Attaque l'ennemie avec le poing" ,effect: "damage", formula: "this.heroService.stats.strength*8"},null,null,null];
+  spells: ISpell[] =[{id:0,name: "Frapper", description: "Attaque l'ennemie avec le poing" ,effect: "damage", formula: "this.heroService.stats.strength*8"},null,null,null];
 
   constructor(private http: HttpClient, ) { 
     this.init();

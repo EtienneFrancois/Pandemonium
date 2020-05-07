@@ -7,7 +7,7 @@ import { BattleService } from '../battle/battle.service';
   providedIn: 'root'
 })
 export class SpellsService {
-  spells: ISpell[] =[{name: "Frapper", description: "Attaque l'ennemie avec le poing" ,effect: "damage", formula: "this.heroService.stats.strength*8"},null,null,null];
+  spells: ISpell[] =[null,null,null,null];
 
   constructor(private heroService: HeroService, private battleService:BattleService) {}
 
